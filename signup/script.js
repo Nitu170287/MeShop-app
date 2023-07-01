@@ -28,6 +28,7 @@ button.addEventListener("click", (event) => {
     if (userDetail.password == confirmPassword) {
       if (userInfo.filter((user) => user.email == userDetail.email)) {
         // userInfo = userInfo.filter((user) => user.email != userDetail.email);
+        //
         alert("User already exist. Please login");
       } else {
         userInfo.push(userDetail);
