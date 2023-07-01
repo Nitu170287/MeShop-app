@@ -24,7 +24,7 @@ button.addEventListener("click", (event) => {
 
       alert("Successfull Signedup. Please login ");
 
-      window.location.href = "./login";
+      window.location.href = "/../login";
     } else {
       alert("Passwords are not matching");
     }
