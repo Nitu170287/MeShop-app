@@ -16,6 +16,6 @@ button.addEventListener("click", (event) => {
 
 function onLoad() {
   if (sessionStorage.getItem("email")) {
-    window.location.href = "/shop";
+    window.location.href = "./shop";
   }
 }

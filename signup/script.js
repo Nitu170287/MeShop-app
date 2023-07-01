@@ -22,14 +22,11 @@ button.addEventListener("click", (event) => {
     if (userDetail.password == confirmPassword) {
       localStorage.setItem("userInfo", JSON.stringify(userDetail));
 
-      
       alert("Successfull Signedup. Please login ");
 
-      window.location.href = "/login";
+      window.location.href = "/../login";
     } else {
       alert("Passwords are not matching");
     }
   }
 });
-
-
