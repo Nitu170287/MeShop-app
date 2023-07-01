@@ -6,13 +6,10 @@ button.addEventListener("click", (event) => {
   let fname = document.getElementById("fname");
   let lname = document.getElementById("lname");
   userDetail.fname = fname.value ? fname.value : userDetail.fname;
-  if (lname.value) {
-    userDetail.lname = lname.name;
-  }
+  userDetail.lname = lname.value ? lname.value : userDetail.lname;
+
   localStorage.setItem("userInfo", JSON.stringify(userDetail));
   alert("first name and last name updated succesfully");
-  fname.value = "";
-  lname.value = "";
 });
 
 // change password button
@@ -53,5 +50,17 @@ let logoutBtn = document.getElementById("logout-btn");
 logoutBtn.addEventListener("click", (event) => {
   event.preventDefault();
   sessionStorage.removeItem("email");
-  window.location.href = "/";
+  window.location.href = "../";
 });
+
+//user profile info
+
+function onLoad() {
+  let userInfo = localStorage.getItem("userInfo");
+
+  if (userInfo) {
+    userInfo = JSON.parse(userInfo);
+    document.getElementById("fname").value = userInfo.fname;
+    document.getElementById("lname").value = userInfo.lname;
+  }
+}

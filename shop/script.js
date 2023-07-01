@@ -13,7 +13,7 @@ let btnElectronic = document.getElementById("btn-electronic");
 
 function onLoad() {
   if (!sessionStorage.getItem("email")) {
-    window.location.href = "/";
+    window.location.href = "../";
   } else {
     fetch("https://fakestoreapi.com/products")
       .then(async (res) => {

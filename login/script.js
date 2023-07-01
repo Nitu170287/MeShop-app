@@ -8,7 +8,7 @@ button.addEventListener("click", (event) => {
   let password = document.getElementById("password-input").value;
   if (userDetail.email == email && userDetail.password == password) {
     sessionStorage.setItem("email", email);
-    window.location.href = "/shop";
+    window.location.href = "../shop";
   } else {
     alert("invalid credential");
   }
@@ -16,6 +16,6 @@ button.addEventListener("click", (event) => {
 
 function onLoad() {
   if (sessionStorage.getItem("email")) {
-    window.location.href = "./shop";
+    window.location.href = "../shop";
   }
 }

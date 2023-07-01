@@ -66,5 +66,5 @@ let checkoutBtn = document.getElementById("btn-checkout");
 checkoutBtn.addEventListener("click", () => {
   localStorage.removeItem("cart");
   alert("items purchased");
-  window.location.href = "/../shop";
+  window.location.href = "../shop";
 });
