@@ -27,12 +27,14 @@ button.addEventListener("click", (event) => {
   } else {
     if (userDetail.password == confirmPassword) {
       if (userInfo.filter((user) => user.email == userDetail.email)) {
-        userInfo = userInfo.filter((user) => user.email != userDetail.email);
-      }
-      userInfo.push(userDetail);
-      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        // userInfo = userInfo.filter((user) => user.email != userDetail.email);
+        alert("User already exist. Please login");
+      } else {
+        userInfo.push(userDetail);
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
-      alert("Successfull Signedup. Please login ");
+        alert("Successfull Signedup. Please login ");
+      }
 
       window.location.href = "../login";
     } else {
