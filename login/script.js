@@ -6,7 +6,8 @@ button.addEventListener("click", (event) => {
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
   let email = document.getElementById("email-input").value;
   let password = document.getElementById("password-input").value;
-  let userDetail = userInfo.filter((user) => user.email == email);
+  let userDetail = userInfo.find((user) => user.email == email);
+  //console.log
   if (userDetail && userDetail.password == password) {
     sessionStorage.setItem("email", email);
     window.location.href = "../shop";
