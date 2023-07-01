@@ -2,6 +2,12 @@ let button = document.getElementById("signup-btn");
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
+  let userInfo = localStorage.getItem("userInfo");
+  if (userInfo) {
+    userInfo = JSON.parse(userInfo);
+  } else {
+    userInfo = [];
+  }
   let userDetail = {
     fname: document.getElementById("fname").value,
     lname: document.getElementById("lname").value,
@@ -20,7 +26,11 @@ button.addEventListener("click", (event) => {
     alert("All fields are required.");
   } else {
     if (userDetail.password == confirmPassword) {
-      localStorage.setItem("userInfo", JSON.stringify(userDetail));
+      if (userInfo.filter((user) => user.email == userDetail.email)) {
+        userInfo = userInfo.filter((user) => user.email != userDetail.email);
+      }
+      userInfo.push(userDetail);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
       alert("Successfull Signedup. Please login ");
 
