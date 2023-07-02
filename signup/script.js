@@ -26,7 +26,9 @@ button.addEventListener("click", (event) => {
     alert("All fields are required.");
   } else {
     if (userDetail.password == confirmPassword) {
-      if (userInfo.filter((user) => user.email == userDetail.email)) {
+      if (
+        userInfo.filter((user) => user.email == userDetail.email).length > 0
+      ) {
         // userInfo = userInfo.filter((user) => user.email != userDetail.email);
         //
         alert("User already exist. Please login");
@@ -34,7 +36,7 @@ button.addEventListener("click", (event) => {
         userInfo.push(userDetail);
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
-        alert("Successfull Signedup. Please login ");
+        alert("Account created successfully. Please login ");
       }
 
       window.location.href = "../login";
